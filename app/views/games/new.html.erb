@@ -1,0 +1,23 @@
+<div id="new-game" class="container">
+  <div class="overlay">
+    <p class="overlay-words-1">LONGEST WORD GAME!</p>
+    <p class="overlay-words-2">Are you ready?</p>
+  </div>
+  <ul class="card-selection">
+  <% for letter in @random_letters %>
+    <li class='card'><span class='card-letter'><%= letter.upcase %></span></li>
+  <% end %>
+  </ul>
+  <form action="/score" method="get" class="input-container">
+    <input 
+      type="text" 
+      name="attempt" 
+      id="" 
+      class="input" 
+      placeholder="_ _ _ _ _ _ _ _ _ _"
+      autofocus="true"
+    >
+    <label for="attempt">Type your word</label>
+    <button class="send">Send</button>
+  </form>
+</div>
